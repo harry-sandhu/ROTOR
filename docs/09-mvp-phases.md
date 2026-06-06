@@ -8,15 +8,15 @@ Each phase should be completed, committed, and reviewed before moving to the nex
 **Goal:** Create the monorepo foundation.
 
 **Deliverables:**
-- root `package.json`
-- `pnpm-workspace.yaml`
+- root `package.json` with Bun workspaces
+- `bun.lock`
 - `turbo.json`
 - base `tsconfig` files
 - initial `apps/` and `packages/` folders
 
 **Expected file changes:**
 - `package.json`
-- `pnpm-workspace.yaml`
+- `bun.lock`
 - `turbo.json`
 - `tsconfig.base.json`
 - `apps/`

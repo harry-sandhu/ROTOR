@@ -141,7 +141,8 @@ ROTOR/
 ├── .pi/
 ├── package.json
 ├── turbo.json
-├── pnpm-workspace.yaml
+├── tsconfig.base.json
+├── bun.lock
 └── README.md
 ```
 

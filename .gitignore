@@ -6,6 +6,8 @@ dist/
 build/
 .next/
 coverage/
+.turbo/
+*.tsbuildinfo
 
 # Environment
 .env
@@ -17,6 +19,7 @@ npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+bun-debug.log*
 
 # Editor / OS
 .DS_Store

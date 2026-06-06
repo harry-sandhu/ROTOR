@@ -57,6 +57,10 @@ Core MVP capabilities:
 - API contracts
 - Database schema and seeds
 
+### Tooling
+- Bun workspaces
+- Turborepo
+
 ## Proposed repository structure
 
 See `docs/00-folder-structure.md`.

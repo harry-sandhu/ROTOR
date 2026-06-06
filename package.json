@@ -1,0 +1,23 @@
+{
+  "name": "rotor",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "bun@1.3.14",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "clean": "turbo clean"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "turbo": "^2.9.16",
+    "typescript": "^6.0.3"
+  }
+}
