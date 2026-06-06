@@ -15,6 +15,7 @@ import searchRoutes from "./modules/search/routes.js";
 import specificationRoutes from "./modules/specifications/routes.js";
 import validationRoutes from "./modules/validation/routes.js";
 import authPlugin from "./plugins/auth.js";
+import corsPlugin from "./plugins/cors.js";
 import dbPlugin from "./plugins/db.js";
 import envPlugin from "./plugins/env.js";
 import errorHandlerPlugin from "./plugins/error-handler.js";
@@ -26,6 +27,7 @@ export async function buildApp(): Promise<FastifyInstance> {
   });
 
   await app.register(envPlugin);
+  await app.register(corsPlugin);
   await app.register(errorHandlerPlugin);
   await app.register(dbPlugin);
   await app.register(authPlugin);

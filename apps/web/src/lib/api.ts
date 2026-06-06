@@ -12,12 +12,15 @@ export class ApiError extends Error {
   }
 }
 
-function buildHeaders(token?: string | undefined, init?: HeadersInit): Headers {
-  const headers = new Headers(init);
-  headers.set("Content-Type", "application/json");
+function buildHeaders(input: { token?: string | undefined; init?: HeadersInit | undefined; hasJsonBody?: boolean | undefined }): Headers {
+  const headers = new Headers(input.init);
 
-  if (token) {
-    headers.set("Authorization", `Bearer ${token}`);
+  if (input.hasJsonBody) {
+    headers.set("Content-Type", "application/json");
+  }
+
+  if (input.token) {
+    headers.set("Authorization", `Bearer ${input.token}`);
   }
 
   return headers;
@@ -26,7 +29,11 @@ function buildHeaders(token?: string | undefined, init?: HeadersInit): Headers {
 export async function apiFetch<T>(path: string, init?: RequestInit & { token?: string | undefined }): Promise<T> {
   const response = await fetch(`${API_BASE_URL}${path}`, {
     ...init,
-    headers: buildHeaders(init?.token, init?.headers),
+    headers: buildHeaders({
+      token: init?.token,
+      init: init?.headers,
+      hasJsonBody: typeof init?.body === "string",
+    }),
     cache: "no-store",
   });
 
