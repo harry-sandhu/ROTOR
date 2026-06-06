@@ -1,6 +1,13 @@
 import Fastify, { type FastifyInstance } from "fastify";
 
 import authRoutes from "./modules/auth/routes.js";
+import adminCategoryRoutes from "./modules/admin/categories/routes.js";
+import adminExportRoutes from "./modules/admin/exports/routes.js";
+import adminImportRoutes from "./modules/admin/imports/routes.js";
+import adminProductRoutes from "./modules/admin/products/routes.js";
+import adminRuleRoutes from "./modules/admin/rules/routes.js";
+import adminSpecificationRoutes from "./modules/admin/specifications/routes.js";
+import buildsRoutes from "./modules/builds/routes.js";
 import categoryRoutes from "./modules/categories/routes.js";
 import compatibilityRoutes from "./modules/compatibility/routes.js";
 import productRoutes from "./modules/products/routes.js";
@@ -39,6 +46,13 @@ export async function buildApp(): Promise<FastifyInstance> {
     await api.register(searchRoutes);
     await api.register(validationRoutes);
     await api.register(compatibilityRoutes);
+    await api.register(buildsRoutes);
+    await api.register(adminSpecificationRoutes);
+    await api.register(adminCategoryRoutes);
+    await api.register(adminRuleRoutes);
+    await api.register(adminProductRoutes);
+    await api.register(adminImportRoutes);
+    await api.register(adminExportRoutes);
   }, { prefix: "/api/v1" });
 
   return app;

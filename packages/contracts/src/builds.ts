@@ -34,6 +34,12 @@ export const createBuildRequestSchema = z.object({
   visibility: buildVisibilitySchema,
 });
 
+export const updateBuildRequestSchema = z.object({
+  name: z.string().min(1).optional(),
+  description: z.string().nullable().optional(),
+  visibility: buildVisibilitySchema.optional(),
+});
+
 export const updateBuildComponentRequestSchema = z.object({
   productId: z.string().uuid(),
   quantity: z.number().int().positive(),
@@ -44,4 +50,5 @@ export type BuildComponent = z.infer<typeof buildComponentSchema>;
 export type BuildSummary = z.infer<typeof buildSummarySchema>;
 export type BuildDetail = z.infer<typeof buildDetailSchema>;
 export type CreateBuildRequest = z.infer<typeof createBuildRequestSchema>;
+export type UpdateBuildRequest = z.infer<typeof updateBuildRequestSchema>;
 export type UpdateBuildComponentRequest = z.infer<typeof updateBuildComponentRequestSchema>;

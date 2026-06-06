@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { categoryKeySchema } from "./categories.js";
-import { productSpecificationSchema } from "./specifications.js";
+import { productSpecificationSchema, specificationValueSchema } from "./specifications.js";
 
 export const productStatusSchema = z.enum(["DRAFT", "ACTIVE", "ARCHIVED"]);
 
@@ -48,6 +48,19 @@ export const productDetailSchema = productSummarySchema.extend({
   updatedAt: z.string().datetime(),
 });
 
+export const productUpsertSchema = z.object({
+  slug: z.string().min(1),
+  name: z.string().min(1),
+  brand: z.string().min(1),
+  categoryKey: categoryKeySchema,
+  description: z.string().nullable().optional(),
+  priceCents: z.number().int().nonnegative(),
+  stockQuantity: z.number().int().nonnegative(),
+  status: productStatusSchema.default("DRAFT"),
+  thumbnailUrl: z.string().url().nullable().optional(),
+  specs: z.record(z.string(), specificationValueSchema).default({}),
+});
+
 export const paginatedProductListSchema = z.object({
   items: z.array(productSummarySchema),
   pagination: z.object({
@@ -63,4 +76,5 @@ export type ProductSpecificationSummary = z.infer<typeof productSpecificationSum
 export type ProductImage = z.infer<typeof productImageSchema>;
 export type ProductSummary = z.infer<typeof productSummarySchema>;
 export type ProductDetail = z.infer<typeof productDetailSchema>;
+export type ProductUpsert = z.infer<typeof productUpsertSchema>;
 export type PaginatedProductList = z.infer<typeof paginatedProductListSchema>;
