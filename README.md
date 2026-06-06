@@ -71,6 +71,7 @@ See `docs/00-folder-structure.md`.
 - `docs/06-builder-and-admin-architecture.md`
 - `docs/07-seed-data-strategy.md`
 - `docs/08-testing-error-handling-and-roadmap.md`
+- `docs/09-mvp-phases.md`
 
 ## Recommended build order
 
