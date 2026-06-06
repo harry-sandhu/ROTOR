@@ -9,10 +9,15 @@
   ],
   "scripts": {
     "dev": "turbo dev",
+    "dev:api": "bun --cwd apps/api run dev",
+    "dev:web": "bun --cwd apps/web run dev",
     "build": "turbo build",
+    "build:api": "bun --cwd apps/api run build",
+    "build:web": "bun --cwd apps/web run build",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "test": "turbo test",
+    "seed": "bun --cwd packages/db run seed",
     "clean": "turbo clean"
   },
   "devDependencies": {

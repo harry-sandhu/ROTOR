@@ -36,11 +36,10 @@ Core MVP capabilities:
 5. **Strong typing**
    Contracts, validation, repositories, and services should share typed definitions.
 
-## Proposed stack
+## Current stack
 
 ### Backend
-- Node.js
-- TypeScript
+- Node.js-compatible TypeScript runtime via Bun
 - Fastify
 - Drizzle ORM
 - PostgreSQL
@@ -48,9 +47,6 @@ Core MVP capabilities:
 
 ### Frontend
 - Next.js + React + TypeScript
-- Tailwind CSS
-- TanStack Query
-- Zustand or equivalent builder state store
 
 ### Shared packages
 - Domain types and compatibility engine
@@ -60,8 +56,9 @@ Core MVP capabilities:
 ### Tooling
 - Bun workspaces
 - Turborepo
+- Vitest
 
-## Proposed repository structure
+## Repository structure
 
 See `docs/00-folder-structure.md`.
 
@@ -76,22 +73,49 @@ See `docs/00-folder-structure.md`.
 - `docs/07-seed-data-strategy.md`
 - `docs/08-testing-error-handling-and-roadmap.md`
 - `docs/09-mvp-phases.md`
+- `docs/10-running-the-mvp.md`
 
-## Recommended build order
+## Current implementation status
 
-1. Create database schema and migrations
-2. Seed categories, spec definitions, and compatibility rules
-3. Implement product/spec repositories
-4. Implement compatibility engine and evaluation APIs
-5. Implement builder APIs and saved builds
-6. Implement admin product/spec/rule management
-7. Implement web builder and product pages
-8. Add import/export and seed validation automation
+Implemented:
+- monorepo scaffolding with Bun workspaces
+- Fastify API app
+- Next.js web app shell and MVP screens
+- dynamic Drizzle schema
+- realistic MVP seed catalog
+- compatibility engine and option filtering APIs
+- saved builds APIs
+- admin management APIs
+- search, validation, and import/export APIs
+- CI + base tests
 
-## Immediate next steps
+## Local commands
 
-- Approve architecture and schema design
-- Scaffold monorepo structure
-- Create Drizzle schema files and migrations
-- Implement seed generation for realistic drone parts
-- Build compatibility evaluation service before UI work
+```bash
+bun install
+bun run dev:api
+bun run dev:web
+bun run seed
+bun run typecheck
+bun run test
+bun run build
+```
+
+## Local URLs
+
+- Web: `http://localhost:3000`
+- API: `http://localhost:3001`
+- API Docs: `http://localhost:3001/docs`
+
+## Demo accounts after seeding
+
+- User: `demo@rotor.app` / `RotorDemo123!`
+- Admin: `admin@rotor.app` / `RotorDemo123!`
+
+## Next recommended work
+
+- generate and apply formal DB migrations
+- expand automated API integration tests
+- refine web UX and state handling
+- harden admin workflows and publish rules
+- add richer product compatibility summaries on detail pages
