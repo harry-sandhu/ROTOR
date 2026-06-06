@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 
+import { AuthStatus } from "../components/auth/AuthStatus";
 import "./globals.css";
 
 interface RootLayoutProps {
@@ -43,13 +44,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Link href="/" style={{ fontWeight: 700, fontSize: "1.125rem" }}>
               Rotor
             </Link>
-            <nav style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              {navItems.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
+              <nav style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                {navItems.map((item) => (
+                  <Link key={item.href} href={item.href}>
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+              <AuthStatus />
+            </div>
           </div>
         </header>
         <main>{children}</main>

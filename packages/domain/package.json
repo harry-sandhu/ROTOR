@@ -6,7 +6,7 @@
     "build": "tsc -p tsconfig.json",
     "lint": "echo 'lint not configured for @rotor/domain yet'",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "echo 'test not configured for @rotor/domain yet'",
+    "test": "vitest run",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   }
 }
