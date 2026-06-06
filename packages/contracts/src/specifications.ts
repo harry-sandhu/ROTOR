@@ -53,8 +53,26 @@ export const productSpecificationSchema = z.object({
   normalizedLabel: z.string().nullable(),
 });
 
+export const productSpecificationInputSchema = z.object({
+  categoryKey: categoryKeySchema,
+  specs: z.record(z.string(), specificationValueSchema),
+});
+
+export const validationIssueSchema = z.object({
+  field: z.string().min(1),
+  message: z.string().min(1),
+});
+
+export const validationResultSchema = z.object({
+  isValid: z.boolean(),
+  issues: z.array(validationIssueSchema),
+});
+
 export type SpecificationDataType = z.infer<typeof specificationDataTypeSchema>;
 export type NumericRange = z.infer<typeof numericRangeSchema>;
 export type SpecificationDefinition = z.infer<typeof specificationDefinitionSchema>;
 export type CategorySpecification = z.infer<typeof categorySpecificationSchema>;
 export type ProductSpecification = z.infer<typeof productSpecificationSchema>;
+export type ProductSpecificationInput = z.infer<typeof productSpecificationInputSchema>;
+export type ValidationIssue = z.infer<typeof validationIssueSchema>;
+export type ValidationResult = z.infer<typeof validationResultSchema>;

@@ -18,6 +18,7 @@
         "@fastify/swagger-ui": "^5.2.3",
         "@rotor/contracts": "workspace:*",
         "@rotor/db": "workspace:*",
+        "@rotor/domain": "workspace:*",
         "bcryptjs": "^3.0.3",
         "drizzle-orm": "^0.44.7",
         "fastify": "^5.6.1",

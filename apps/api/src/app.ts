@@ -2,8 +2,11 @@ import Fastify, { type FastifyInstance } from "fastify";
 
 import authRoutes from "./modules/auth/routes.js";
 import categoryRoutes from "./modules/categories/routes.js";
+import compatibilityRoutes from "./modules/compatibility/routes.js";
 import productRoutes from "./modules/products/routes.js";
+import searchRoutes from "./modules/search/routes.js";
 import specificationRoutes from "./modules/specifications/routes.js";
+import validationRoutes from "./modules/validation/routes.js";
 import authPlugin from "./plugins/auth.js";
 import dbPlugin from "./plugins/db.js";
 import envPlugin from "./plugins/env.js";
@@ -33,6 +36,9 @@ export async function buildApp(): Promise<FastifyInstance> {
     await api.register(categoryRoutes);
     await api.register(specificationRoutes);
     await api.register(productRoutes);
+    await api.register(searchRoutes);
+    await api.register(validationRoutes);
+    await api.register(compatibilityRoutes);
   }, { prefix: "/api/v1" });
 
   return app;
