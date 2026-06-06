@@ -1,12 +1,8 @@
 import { buildApp } from "./app.js";
 
-const DEFAULT_HOST = "0.0.0.0";
-const DEFAULT_PORT = 3001;
-
 async function startServer(): Promise<void> {
   const app = await buildApp();
-  const host = process.env.HOST ?? DEFAULT_HOST;
-  const port = Number(process.env.PORT ?? DEFAULT_PORT);
+  const { HOST: host, PORT: port } = app.appEnv;
 
   const shutdown = async (): Promise<void> => {
     app.log.info("Shutting down API server...");
