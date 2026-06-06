@@ -11,6 +11,13 @@
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "dependencies": {
+    "@fastify/jwt": "^10.0.0",
+    "@fastify/swagger": "^9.6.1",
+    "@fastify/swagger-ui": "^5.2.3",
+    "@rotor/contracts": "workspace:*",
+    "@rotor/db": "workspace:*",
+    "bcryptjs": "^3.0.3",
+    "drizzle-orm": "^0.44.7",
     "fastify": "^5.6.1",
     "fastify-plugin": "^5.1.0",
     "zod": "^4.1.12"

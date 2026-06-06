@@ -3,6 +3,13 @@
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["ES2022"],
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@rotor/contracts": ["packages/contracts/src/index.ts"],
+      "@rotor/db": ["packages/db/src/index.ts"],
+      "@rotor/domain": ["packages/domain/src/index.ts"]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noUncheckedIndexedAccess": true,
