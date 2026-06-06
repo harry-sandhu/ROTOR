@@ -8,6 +8,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "echo 'test not configured for @rotor/db yet'",
     "clean": "rm -rf dist tsconfig.tsbuildinfo",
+    "seed": "bun src/seeds/index.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate"
   },
