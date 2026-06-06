@@ -9,8 +9,8 @@
     "test": "vitest run",
     "clean": "rm -rf dist tsconfig.tsbuildinfo",
     "seed": "bun src/seeds/index.ts",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate"
+    "db:generate": "drizzle-kit generate --config=../../drizzle.config.ts",
+    "db:migrate": "drizzle-kit migrate --config=../../drizzle.config.ts"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
