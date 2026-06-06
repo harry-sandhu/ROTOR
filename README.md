@@ -101,6 +101,8 @@ bun run test
 bun run build
 ```
 
+These root scripts now shell into the correct workspace directories.
+
 ## Local URLs
 
 - Web: `http://localhost:3000`

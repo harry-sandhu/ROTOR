@@ -35,9 +35,9 @@ bun run seed
 
 ### Direct package execution
 ```bash
-bun --cwd apps/api run dev
-bun --cwd apps/web run dev
-bun --cwd packages/db run seed
+cd apps/api && bun run dev
+cd apps/web && bun run dev
+cd packages/db && bun run seed
 ```
 
 ## Database setup flow
