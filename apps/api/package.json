@@ -1,0 +1,16 @@
+{
+  "name": "@rotor/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "lint": "echo 'lint not configured for @rotor/api yet'",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo 'test not configured for @rotor/api yet'",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "dependencies": {
+    "fastify": "^5.6.1"
+  }
+}
