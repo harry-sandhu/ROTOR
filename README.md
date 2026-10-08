@@ -111,6 +111,8 @@ These root scripts now shell into the correct workspace directories.
 
 ## Demo accounts after seeding
 
+Local development only — these are seeded into your own local database, not a production credential:
+
 - User: `demo@rotor.app` / `RotorDemo123!`
 - Admin: `admin@rotor.app` / `RotorDemo123!`
 

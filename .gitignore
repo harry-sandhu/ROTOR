@@ -9,6 +9,9 @@ coverage/
 .turbo/
 *.tsbuildinfo
 
+# Next.js auto-generated
+next-env.d.ts
+
 # Environment
 .env
 .env.*

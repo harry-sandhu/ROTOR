@@ -3,6 +3,7 @@ import { hashSync } from "bcryptjs";
 import type { NewUser } from "../schema/auth.js";
 import { stableUuid } from "./shared.js";
 
+// Demo account — local development only, not a production credential.
 const demoPasswordHash = hashSync("RotorDemo123!", 10);
 
 export const sampleUserSeeds: NewUser[] = [

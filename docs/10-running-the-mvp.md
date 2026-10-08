@@ -81,7 +81,7 @@ Web default:
 
 ## Seeded demo accounts
 
-After running seeds, these accounts exist:
+After running seeds, these accounts exist in your local database. They are for local development only and are not production credentials:
 
 ### Demo user
 - email: `demo@rotor.app`
